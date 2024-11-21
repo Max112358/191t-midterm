@@ -316,3 +316,174 @@
 1732148770 source:c:\users\maxjo\downloads\191t\lesson13\src\enemymanager.cpp
 	"EnemyManager.h"
 
+1731970647 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\main.cpp
+	<windows.h>
+	<_Common.h>
+	<_Scene.h>
+
+1732035932 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_common.h
+	<string.h>
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glext.h>
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+	<time.h>
+	<cmath>
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_scene.h
+	<_Common.h>
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_2dplayer.cpp
+	"_2DPlayer.h"
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_2dplayer.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_textureloader.h
+	<_Common.h>
+	<SOIL.h>
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_timer.h
+	<_Common.h>
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_bullets.cpp
+	"_Bullets.h"
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_bullets.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_camera.cpp
+	"_Camera.h"
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_camera.h
+	<_Common.h>
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_collision.cpp
+	"_Collision.h"
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_collision.h
+	<_Common.h>
+
+1732148739 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_kbms.cpp
+	"_KbMs.h"
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_kbms.h
+	<_Common.h>
+	<_Models.h>
+	<_parallax.h>
+	<_SkyBox.h>
+	<_Skybox2.h>
+	<_Camera.h>
+	<_2DPlayer.h>
+	<_ModelLoaderMD2.h>
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_models.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_parallax.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_skybox.h
+	<_Common.h>
+	<_TextureLoader.h>
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_skybox2.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1732158336 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_modelloadermd2.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<map>
+	<string>
+	<vector>
+	<fstream>
+	<sstream>
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_lightsetup.cpp
+	"_lightSetup.h"
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_lightsetup.h
+	<_Common.h>
+
+1732158150 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_modelloadermd2.cpp
+	"_ModelLoaderMD2.h"
+	<cstring>
+	<iostream>
+	"Anorms.h"
+
+1732149122 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\anorms.h
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_models.cpp
+	"_Models.h"
+
+1732037016 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_objloader.cpp
+	"_OBJLoader.h"
+
+1732035699 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_objloader.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<vector>
+	<string>
+	<fstream>
+	<sstream>
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_parallax.cpp
+	"_parallax.h"
+
+1732160341 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_scene.cpp
+	"_Scene.h"
+	<_lightSetup.h>
+	<_Models.h>
+	<_KbMs.h>
+	<_parallax.h>
+	<_SkyBox.h>
+	<_Skybox2.h>
+	<_Camera.h>
+	<_2DPlayer.h>
+	<_Bullets.h>
+	<_Collision.h>
+	<_ModelLoaderMD2.h>
+	<_OBJLoader.h>
+	"EnemyManager.h"
+
+1732160577 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\enemymanager.h
+	"_ModelLoaderMD2.h"
+	"_Timer.h"
+	<vector>
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_skybox.cpp
+	"_SkyBox.h"
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_skybox2.cpp
+	"_Skybox2.h"
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_textureloader.cpp
+	"_TextureLoader.h"
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_timer.cpp
+	"_Timer.h"
+
+1732160542 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\enemymanager.cpp
+	"EnemyManager.h"
+
+1731971624 c:\users\maxjo\documents\github\191t-midterm\common\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1731966788 c:\users\maxjo\documents\github\191t-midterm\common\include\soil.h
+

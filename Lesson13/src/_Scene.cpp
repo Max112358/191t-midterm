@@ -16,6 +16,7 @@
 
 
 
+
 _Camera *cam = new _Camera();
 _lightSetup *myLight = new _lightSetup();
 //_Models *teapot = new _Models();
@@ -28,6 +29,15 @@ _Bullets b[20];
 _Collision *hit = new _Collision();
 _ModelLoaderMD2 *mdl3D = new _ModelLoaderMD2();
 EnemyManager* enemies = new EnemyManager();
+
+// Add new variables for jump mechanics
+float jumpVelocity = 0.0f;
+float gravity = 0.15f;
+bool isJumping = false;
+const float JUMP_FORCE = 5.0f;   // Increased initial jump force
+const float INITIAL_X = -70.0f;    // Starting X position
+const float INITIAL_Y = 4.0f;    // Starting Y position (ground level)
+const float INITIAL_Z = -100.0f; // Starting Z position (distance from camera)
 
 _Scene::_Scene()
 {
@@ -77,8 +87,14 @@ GLint _Scene::initGL()
     sky2->skyBoxinit("images/bk.png");
 
 
-    mdl3D->initModel("models/Tekk/tris.md2");
-    mdl3D->setAnimationState(_ModelLoaderMD2::ANIM_STAND);
+    mdl3D->initModel("models/Tekk/tris.md2"); //this is the main character
+    mdl3D->setAnimationState(_ModelLoaderMD2::ANIM_RUN); // Start with running
+    mdl3D->dirAngleZ = 0; // Face right
+
+    // Set fixed position
+    mdl3D->pos.x = INITIAL_X;
+    mdl3D->pos.y = INITIAL_Y;
+    mdl3D->pos.z = INITIAL_Z;
 
     //pl->initPlayer(6,4,"images/player.png");
 
@@ -88,7 +104,7 @@ GLint _Scene::initGL()
 
     // In _Scene.cpp, in initGL()
     enemies->initEnemy("models/carrot/tris.md2");  // The carrot model should have its texture path in the md2 file
-    enemies->spawnEnemy(50, 4, -100); // Spawns enemy to the right
+    enemies->spawnEnemy(50, -30, -100); // Spawns enemy to the right
     //mdl3D->generateUVTemplate("carrot_template.png", &mdl3D->md2file);
 
 
@@ -98,72 +114,51 @@ GLint _Scene::initGL()
 
 GLint _Scene::drawScene()
 {
-
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glLoadIdentity(); //clearing matrices
+    glLoadIdentity();
     cam->setUpCam();
 
     wireFrame ? glPolygonMode(GL_FRONT_AND_BACK, GL_LINE) : glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
-   // teapot->rotateX += 0.005;
-
     glPushMatrix();
-    //teapot->moveModel();
     myLight->movingLight(GL_LIGHT0);
-    //teapot->drawModel();
     glPopMatrix();
-
-    /*
-    glPushMatrix();
-    glTranslatef(0,-10,1);
-    glRotatef(90,1,0,0);
-    glScalef(100,50,1.0);
-   // plx->parallaxScroll(true, "left", 0.005);
-    plx->parallaxDraw(screenWidth,screenHeight);
-    glPopMatrix();
-    */
 
     //this part controls the parallax background
     glPushMatrix();
     glTranslatef(0,-10,1);
     glRotatef(90,1,0,0);
     glScalef(100,50,1.0);
-
-    plx->parallaxScroll(true, "right", 0.005); // Enable auto-scrolling left
+    plx->parallaxScroll(true, "right", 0.005);
     plx->parallaxDraw(screenWidth,screenHeight);
     glPopMatrix();
 
-    /*
     glPushMatrix();
-    for(int i = 0; i < 20; ++i){
-        b[i].drawBullet();
-        if(hit->isSphereCollision(b[i].pos, teapot->pos, 0.2,0.3,0.4)){
-            //cout << "hit" << endl;
-            if(teapot->color.r == 1){
-                teapot->color.r = 0;
-                teapot->color.g = 1; //exam maybe :) allow for collision on 3d model
-            } else if(teapot->color.g == 1){
-                teapot->color.g = 0;
-                teapot->color.b = 1;
-            } else if(teapot->color.b == 1){
-                teapot->color.b = 0;
-                teapot->color.r = 1;
-            }
-
-        }
-        b[i].bulletAction();
-    }
-
-     glPopMatrix();
-    */
-
-    glPushMatrix();
-    //sky->drawSkyBox();
     sky2->skyBoxDraw();
     glPopMatrix();
 
+    float deltaTime = 1.0f/60.0f;
 
-    float deltaTime = 1.0f/60.0f; // Or calculate actual deltaTime
+    // Always move right when not jumping
+    if (!isJumping) {
+        //mdl3D->pos.x += 0.5f; DONT DO THIS! Char is fixed in position, and enemies move left towards him
+        mdl3D->dirAngleZ = 0;  // Face right
+        mdl3D->setAnimationState(_ModelLoaderMD2::ANIM_RUN);
+    }
+
+    // Handle jumping physics
+    if (isJumping) {
+        mdl3D->pos.y += jumpVelocity * deltaTime * 30.0f;
+        jumpVelocity -= gravity;
+
+        // Check if we've landed
+        if (mdl3D->pos.y <= INITIAL_Y) {
+            mdl3D->pos.y = INITIAL_Y;
+            isJumping = false;
+            jumpVelocity = 0.0f;
+            mdl3D->setAnimationState(_ModelLoaderMD2::ANIM_RUN);  // Go back to running
+        }
+    }
 
     glPushMatrix();
     mdl3D->updateAnimation(deltaTime);
@@ -172,19 +167,28 @@ GLint _Scene::drawScene()
 
     glPushMatrix();
     enemies->updateEnemies();
+    enemies->checkCollisions(mdl3D, isJumping); // Add this line to check for collisions
     enemies->drawEnemies();
     glPopMatrix();
 
-    glPushMatrix();
-    glDisable(GL_LIGHTING);
-    //pl->drawPLayer();
-    //pl->actions();
-    glEnable(GL_LIGHTING);
-    glPopMatrix();
-
-
-
     return true;
+}
+
+int _Scene::winMsg(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+    switch(uMsg) {
+    case WM_KEYDOWN:
+        switch(wParam) {
+        case VK_SPACE:
+            if (!isJumping) {
+                isJumping = true;
+                jumpVelocity = JUMP_FORCE;
+                mdl3D->setAnimationState(_ModelLoaderMD2::ANIM_JUMP);
+            }
+            break;
+        }
+        break;
+    }
+    return 0;
 }
 
 GLvoid _Scene::resizeScene(GLsizei width, GLsizei height)
@@ -229,34 +233,4 @@ GLvoid _Scene::mouseMapping(int x, int y)
 
      gluUnProject(winX,winY,winZ,modelViewM,projectionM,viewPort,&mouseX,&mouseY,&mouseZ);
 
-}
-
-
-int _Scene::winMsg(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
-    switch(uMsg) {
-    case WM_KEYDOWN:
-        switch(wParam) {
-        case VK_LEFT:
-            mdl3D->dirAngleZ = 180;
-            mdl3D->setAnimationState(_ModelLoaderMD2::ANIM_RUN);
-            mdl3D->pos.x -= 0.5f; // Adjust speed as needed
-            break;
-        case VK_RIGHT:
-            mdl3D->dirAngleZ = 0;
-            mdl3D->setAnimationState(_ModelLoaderMD2::ANIM_RUN);
-            mdl3D->pos.x += 0.5f; // Adjust speed as needed
-            break;
-        case VK_SPACE:
-            mdl3D->setAnimationState(_ModelLoaderMD2::ANIM_JUMP);
-            break;
-        }
-        break;
-
-    case WM_KEYUP:
-        if(wParam == VK_LEFT || wParam == VK_RIGHT) {
-            mdl3D->setAnimationState(_ModelLoaderMD2::ANIM_STAND);
-        }
-        break;
-    }
-    return 0;
 }

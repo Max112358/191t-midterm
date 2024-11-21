@@ -103,6 +103,18 @@ public:
     void updateAnimation(float deltaTime);
     void generateUVTemplate(const char* outputPath);
 
+    void DrawWithScale(float scale) {
+        glPushMatrix();
+        glScalef(scale, scale, scale);
+        glTranslatef(pos.x, pos.y, pos.z);
+        glRotatef(-90.0f, 1.0, 0.0, 0.0);
+        glRotatef(dirAngleZ, 0.0, 0.0, 1.0);
+
+        RenderFrameItpWithGLCmds(currentFrame, interpValue, &md2file);
+        glPopMatrix();
+    }
+
+    vec3 scale;  // Add scale property
     vec3 pos;
     float dirAngleZ;
 

@@ -6,6 +6,7 @@
 _ModelLoaderMD2::_ModelLoaderMD2() {
     pos = {0, 4, -100};
     dirAngleZ = 0;
+    scale = {0.1f, 0.1f, 0.1f};  // Default scale
     currentState = ANIM_STAND;
     currentFrame = 0;
     interpValue = 0;
@@ -67,7 +68,7 @@ bool _ModelLoaderMD2::initModel(const char* filename) {
 
 void _ModelLoaderMD2::Draw() {
     glPushMatrix();
-    glScalef(0.1, 0.1, 0.1);
+    glScalef(0.1f, 0.1f, 0.1f);  // Restore default scale for main character
     glTranslatef(pos.x, pos.y, pos.z);
     glRotatef(-90.0f, 1.0, 0.0, 0.0);
     glRotatef(dirAngleZ, 0.0, 0.0, 1.0);
