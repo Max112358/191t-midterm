@@ -12,6 +12,8 @@
 #include <_ModelLoaderMD2.h>
 #include <_OBJLoader.h>
 #include "EnemyManager.h"
+#include "_TextDisplay.h"
+#include <_TextRenderer.h>
 
 
 
@@ -30,6 +32,8 @@ _Collision *hit = new _Collision();
 _ModelLoaderMD2 *mdl3D = new _ModelLoaderMD2();
 EnemyManager* enemies = new EnemyManager();
 
+
+
 // Add new variables for jump mechanics
 float jumpVelocity = 0.0f;
 float gravity = 0.15f;
@@ -39,12 +43,18 @@ const float INITIAL_X = -70.0f;    // Starting X position
 const float INITIAL_Y = 4.0f;    // Starting Y position (ground level)
 const float INITIAL_Z = -100.0f; // Starting Z position (distance from camera)
 
+//other vars
+int gameScore = 0;  // Add this with your other member variables
+
+
 _Scene::_Scene()
 {
 
     //ctor
     screenWidth = GetSystemMetrics(SM_CXSCREEN);
     screenHeight = GetSystemMetrics(SM_CYSCREEN);
+
+
 }
 
 _Scene::~_Scene()
@@ -106,6 +116,8 @@ GLint _Scene::initGL()
     enemies->initEnemy("models/carrot/tris.md2");  // The carrot model should have its texture path in the md2 file
     enemies->spawnEnemy(50, -30, -100); // Spawns enemy to the right
     //mdl3D->generateUVTemplate("carrot_template.png", &mdl3D->md2file);
+
+
 
 
     return true;
@@ -170,6 +182,12 @@ GLint _Scene::drawScene()
     enemies->checkCollisions(mdl3D, isJumping); // Add this line to check for collisions
     enemies->drawEnemies();
     glPopMatrix();
+
+
+    std::string scoreText = "Score: " + std::to_string(gameScore);
+    _TextRenderer::renderText(scoreText.c_str(), 10, 550);  // You might need to adjust these y-values
+    _TextRenderer::renderText("Press SPACE to jump", 10, 500);  // Increased spacing for larger font
+
 
     return true;
 }

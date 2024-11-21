@@ -2,6 +2,8 @@
 #define _SCENE_H
 
 #include <_Common.h>
+#include "_TextDisplay.h" // Add at top with other includes
+
 
 class _Scene
 {
@@ -32,6 +34,7 @@ class _Scene
     protected:
 
     private:
+        _TextDisplay* textDisplay;
 };
 
 #endif // _SCENE_H
