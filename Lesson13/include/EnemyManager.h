@@ -22,7 +22,7 @@ public:
 
 
     // New spawn configuration
-    float spawnX = 400.0f;      // Spawn position just off right side
+    float spawnX = 600.0f;      // Spawn position just off right side
     float spawnY = -30.0f;        // Same height as player
     float spawnZ = -100.0f;     // Same Z-depth as player
     float enemySpeed = 4.5f;    // How fast enemies move left

@@ -12,7 +12,6 @@
 #include <_ModelLoaderMD2.h>
 #include <_OBJLoader.h>
 #include "EnemyManager.h"
-#include "_TextDisplay.h"
 #include <_TextRenderer.h>
 
 

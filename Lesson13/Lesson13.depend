@@ -333,9 +333,8 @@
 	<time.h>
 	<cmath>
 
-1732209431 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_scene.h
+1732211424 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_scene.h
 	<_Common.h>
-	"_TextDisplay.h"
 
 1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_2dplayer.cpp
 	"_2DPlayer.h"
@@ -444,7 +443,7 @@
 1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_parallax.cpp
 	"_parallax.h"
 
-1732210604 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_scene.cpp
+1732211430 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_scene.cpp
 	"_Scene.h"
 	<_lightSetup.h>
 	<_Models.h>
@@ -459,10 +458,9 @@
 	<_ModelLoaderMD2.h>
 	<_OBJLoader.h>
 	"EnemyManager.h"
-	"_TextDisplay.h"
 	<_TextRenderer.h>
 
-1732161259 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\enemymanager.h
+1732211592 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\enemymanager.h
 	"_ModelLoaderMD2.h"
 	"_Timer.h"
 	<vector>
@@ -499,7 +497,7 @@
 1732209758 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_textdisplay.cpp
 	"_TextDisplay.h"
 
-1732210644 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_textrenderer.h
+1732211519 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_textrenderer.h
 	<_Common.h>
 	<string>
 

@@ -6,48 +6,54 @@
 
 class _TextRenderer {
 public:
-    static void renderText(const char* text, int x, int y) {
+    static void renderText(const char* text, int x, int y, float r, float g, float b) {
+        // Save all attributes that we'll modify
+        glPushAttrib(GL_ALL_ATTRIB_BITS);
+
         // Save matrices and setup ortho projection
         glMatrixMode(GL_PROJECTION);
         glPushMatrix();
         glLoadIdentity();
-        glOrtho(0, 800, 0, 600, -1, 1);  // Use fixed screen size for now
+        glOrtho(0, 800, 0, 600, -1, 1);
 
         glMatrixMode(GL_MODELVIEW);
         glPushMatrix();
         glLoadIdentity();
 
-        // Temporarily disable depth testing and textures
+        // Disable states that might interfere with text rendering
+        glDisable(GL_LIGHTING);
         glDisable(GL_DEPTH_TEST);
         glDisable(GL_TEXTURE_2D);
 
-        // Set color to white for visibility
-        glColor3f(1.0f, 1.0f, 1.0f);
+        // Reset color material mode
+        glDisable(GL_COLOR_MATERIAL);
+
+        // Ensure we're in the right blending mode for text
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+        // Set text color
+        glColor3f(r, g, b);
 
         // Position and render text
         glRasterPos2i(x, y);
         for (const char* c = text; *c != '\0'; c++) {
-            // Use GLUT_BITMAP_TIMES_ROMAN_24 for larger text
-            // Options are:
-            // GLUT_BITMAP_8_BY_13
-            // GLUT_BITMAP_9_BY_15
-            // GLUT_BITMAP_TIMES_ROMAN_10
-            // GLUT_BITMAP_TIMES_ROMAN_24  (largest built-in font)
-            // GLUT_BITMAP_HELVETICA_10
-            // GLUT_BITMAP_HELVETICA_12
-            // GLUT_BITMAP_HELVETICA_18
             glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, *c);
         }
 
-        // Restore states
-        glEnable(GL_DEPTH_TEST);
-        glEnable(GL_TEXTURE_2D);
-
-        // Restore matrices
+        // Restore all states
+        glPopMatrix();
         glMatrixMode(GL_PROJECTION);
         glPopMatrix();
         glMatrixMode(GL_MODELVIEW);
-        glPopMatrix();
+
+        // Restore all attributes
+        glPopAttrib();
+    }
+
+    static void renderText(const char* text, int x, int y) {
+        // Default to white text
+        renderText(text, x, y, 1.0f, 1.0f, 1.0f);
     }
 };
 
