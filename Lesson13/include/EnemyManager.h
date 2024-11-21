@@ -27,8 +27,9 @@ public:
     float spawnZ = -100.0f;     // Same Z-depth as player
     float enemySpeed = 4.5f;    // How fast enemies move left
     // Constants for collision detection
-    const float ENEMY_WIDTH = 30.0f;  // Approximate width of enemy model
-    const float PLAYER_WIDTH = 30.0f; // Approximate width of player model
+    const float ENEMY_WIDTH = 1.0f;  // Approximate width of enemy model
+    const float PLAYER_WIDTH = 1.0f; // Approximate width of player model
+    const float PLAYER_X_OFFSET = -120.0f; // Adjust this value to match visual position
 
 
 
@@ -42,9 +43,26 @@ private:
     int spawnInterval = 3000;    // Spawn every 3 seconds (in milliseconds)
     bool shouldSpawnEnemy();
     bool isColliding(const _ModelLoaderMD2* enemy, const _ModelLoaderMD2* player, bool isPlayerJumping);
-    // Helper method to calculate distance between two points
-    float getXDistance(const vec3& p1, const vec3& p2) {
-        return std::abs(p2.x - p1.x);
+
+    float getEdgeDistance(const _ModelLoaderMD2* enemy, const _ModelLoaderMD2* player) {
+        float playerHalfWidth = (PLAYER_WIDTH * player->scale.x) / 2.0f;
+        float enemyHalfWidth = (ENEMY_WIDTH * enemy->scale.x) / 2.0f;
+
+        // Apply offset to player position for collision check
+        float adjustedPlayerX = player->pos.x + PLAYER_X_OFFSET;
+
+        float playerLeftEdge = adjustedPlayerX - playerHalfWidth;
+        float playerRightEdge = adjustedPlayerX + playerHalfWidth;
+        float enemyLeftEdge = enemy->pos.x - enemyHalfWidth;
+        float enemyRightEdge = enemy->pos.x + enemyHalfWidth;
+
+        if (playerRightEdge < enemyLeftEdge) {
+            return enemyLeftEdge - playerRightEdge;
+        }
+        if (playerLeftEdge > enemyRightEdge) {
+            return playerLeftEdge - enemyRightEdge;
+        }
+        return 0.0f;  // Edges are overlapping
     }
 
 };

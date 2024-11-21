@@ -99,12 +99,20 @@ void EnemyManager::drawEnemies() {
 }
 
 
+bool EnemyManager::isColliding(const _ModelLoaderMD2* enemy, const _ModelLoaderMD2* player, bool isPlayerJumping) {
+    // Get the distance between closest edges
+    float edgeDistance = getEdgeDistance(enemy, player);
+    cout << edgeDistance << endl;
+
+    // If distance is 0 or negative, we have a collision
+    return edgeDistance <= 2.0f;
+}
+
 void EnemyManager::checkCollisions(const _ModelLoaderMD2* player, bool isPlayerJumping) {
     auto it = enemies.begin();
     while (it != enemies.end()) {
         if (isColliding(*it, player, isPlayerJumping)) {
             if (!isPlayerJumping) {
-                // If collision detected and player isn't jumping, remove enemy
                 delete *it;
                 it = enemies.erase(it);
             } else {
@@ -114,12 +122,4 @@ void EnemyManager::checkCollisions(const _ModelLoaderMD2* player, bool isPlayerJ
             ++it;
         }
     }
-}
-
-bool EnemyManager::isColliding(const _ModelLoaderMD2* enemy, const _ModelLoaderMD2* player, bool isPlayerJumping) {
-    // Only check X-axis distance
-    float xDistance = getXDistance(enemy->pos, player->pos);
-
-    // Return true if within X threshold
-    return xDistance < X_COLLISION_THRESHOLD;
 }

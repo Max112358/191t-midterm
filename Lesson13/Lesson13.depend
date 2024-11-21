@@ -459,7 +459,7 @@
 	<_OBJLoader.h>
 	"EnemyManager.h"
 
-1732160577 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\enemymanager.h
+1732161259 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\enemymanager.h
 	"_ModelLoaderMD2.h"
 	"_Timer.h"
 	<vector>
@@ -476,7 +476,7 @@
 1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_timer.cpp
 	"_Timer.h"
 
-1732160542 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\enemymanager.cpp
+1732161105 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\enemymanager.cpp
 	"EnemyManager.h"
 
 1731971624 c:\users\maxjo\documents\github\191t-midterm\common\include\gl\glut.h
