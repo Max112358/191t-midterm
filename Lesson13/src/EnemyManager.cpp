@@ -108,16 +108,21 @@ bool EnemyManager::isColliding(const _ModelLoaderMD2* enemy, const _ModelLoaderM
     return edgeDistance <= 2.0f;
 }
 
-void EnemyManager::checkCollisions(const _ModelLoaderMD2* player, bool isPlayerJumping) {
+void EnemyManager::checkCollisions(const _ModelLoaderMD2* player, bool isPlayerJumping, int& score) {
     auto it = enemies.begin();
     while (it != enemies.end()) {
-        if (isColliding(*it, player, isPlayerJumping)) {
-            if (!isPlayerJumping) {
-                delete *it;
-                it = enemies.erase(it);
-            } else {
-                ++it;
-            }
+        float distance = getEdgeDistance(*it, player);
+
+        // If distance is increasing and we're just past collision distance,
+        // that means we successfully jumped over
+        if (distance > 2.0f && distance < 3.0f && isPlayerJumping) {
+            score += 10;  // Increase score in Scene
+        }
+
+        // Handle regular collision
+        if (distance <= 2.0f && !isPlayerJumping) {
+            delete *it;
+            it = enemies.erase(it);
         } else {
             ++it;
         }

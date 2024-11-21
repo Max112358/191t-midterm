@@ -18,7 +18,9 @@ public:
     void drawEnemies();
     void checkSpawnTimer(); // New method to handle periodic spawning
     void removeOffscreenEnemies(); // New method to clean up enemies
-    void checkCollisions(const _ModelLoaderMD2* player, bool isPlayerJumping);
+    void checkCollisions(const _ModelLoaderMD2* player, bool isPlayerJumping, int& score);
+
+
 
 
     // New spawn configuration

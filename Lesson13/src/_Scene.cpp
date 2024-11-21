@@ -178,7 +178,7 @@ GLint _Scene::drawScene()
 
     glPushMatrix();
     enemies->updateEnemies();
-    enemies->checkCollisions(mdl3D, isJumping); // Add this line to check for collisions
+    enemies->checkCollisions(mdl3D, isJumping, gameScore);  // Now passing all 3 required arguments
     enemies->drawEnemies();
     glPopMatrix();
 
