@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Lesson13" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Lesson13" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="C:/Users/15599/Desktop/CSCI 191T/common/bin" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Lesson13" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="C:/Users/15599/Desktop/CSCI 191T/common/bin" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="../Common/include" />
+		</Compiler>
+		<Linker>
+			<Add library="../Common/libSOIL.a" />
+			<Add library="glut32" />
+			<Add library="opengl32" />
+			<Add library="glu32" />
+			<Add library="winmm" />
+			<Add library="gdi32" />
+			<Add directory="../Common/lib" />
+		</Linker>
+		<Unit filename="include/Anorms.h" />
+		<Unit filename="include/EnemyManager.h" />
+		<Unit filename="include/_2DPlayer.h" />
+		<Unit filename="include/_Bullets.h" />
+		<Unit filename="include/_Camera.h" />
+		<Unit filename="include/_Collision.h" />
+		<Unit filename="include/_Common.h" />
+		<Unit filename="include/_KbMs.h" />
+		<Unit filename="include/_ModelLoaderMD2.h" />
+		<Unit filename="include/_Models.h" />
+		<Unit filename="include/_OBJLoader.h" />
+		<Unit filename="include/_Scene.h" />
+		<Unit filename="include/_SkyBox.h" />
+		<Unit filename="include/_Skybox2.h" />
+		<Unit filename="include/_TextureLoader.h" />
+		<Unit filename="include/_Timer.h" />
+		<Unit filename="include/_lightSetup.h" />
+		<Unit filename="include/_parallax.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/EnemyManager.cpp" />
+		<Unit filename="src/_2DPlayer.cpp" />
+		<Unit filename="src/_Bullets.cpp" />
+		<Unit filename="src/_Camera.cpp" />
+		<Unit filename="src/_Collision.cpp" />
+		<Unit filename="src/_KbMs.cpp" />
+		<Unit filename="src/_ModelLoaderMD2.cpp" />
+		<Unit filename="src/_Models.cpp" />
+		<Unit filename="src/_OBJLoader.cpp" />
+		<Unit filename="src/_Scene.cpp" />
+		<Unit filename="src/_SkyBox.cpp" />
+		<Unit filename="src/_Skybox2.cpp" />
+		<Unit filename="src/_TextureLoader.cpp" />
+		<Unit filename="src/_Timer.cpp" />
+		<Unit filename="src/_lightSetup.cpp" />
+		<Unit filename="src/_parallax.cpp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

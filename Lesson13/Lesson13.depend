@@ -1,0 +1,318 @@
+# depslib dependency file v1.0
+1730772064 source:c:\users\15599\desktop\csci 191t\lesson13\main.cpp
+	<windows.h>
+	<_Common.h>
+	<_Scene.h>
+
+1730332911 c:\users\15599\desktop\csci 191t\lesson13\include\_common.h
+	<string.h>
+	<GL/glut.h>
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+	<gl/gl.h>
+	<time.h>
+	<cmath>
+
+1724715401 c:\users\15599\desktop\csci 191t\common\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1730771801 c:\users\15599\desktop\csci 191t\lesson13\include\_scene.h
+	<_Common.h>
+
+1729553754 source:c:\users\15599\desktop\csci 191t\lesson13\src\_2dplayer.cpp
+	"_2DPlayer.h"
+
+1728517308 c:\users\15599\desktop\csci 191t\lesson13\include\_2dplayer.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1726850829 c:\users\15599\desktop\csci 191t\lesson13\include\_textureloader.h
+	<_Common.h>
+	<SOIL.h>
+
+1726701383 c:\users\15599\desktop\csci 191t\common\include\soil.h
+
+1727307435 c:\users\15599\desktop\csci 191t\lesson13\include\_timer.h
+	<_Common.h>
+
+1729554510 source:c:\users\15599\desktop\csci 191t\lesson13\src\_bullets.cpp
+	"_Bullets.h"
+
+1729554154 c:\users\15599\desktop\csci 191t\lesson13\include\_bullets.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1730159157 source:c:\users\15599\desktop\csci 191t\lesson13\src\_camera.cpp
+	"_Camera.h"
+
+1730157801 c:\users\15599\desktop\csci 191t\lesson13\include\_camera.h
+	<_Common.h>
+
+1730332284 source:c:\users\15599\desktop\csci 191t\lesson13\src\_collision.cpp
+	"_Collision.h"
+
+1730332298 c:\users\15599\desktop\csci 191t\lesson13\include\_collision.h
+	<_Common.h>
+
+1730944046 source:c:\users\15599\desktop\csci 191t\lesson13\src\_kbms.cpp
+	"_KbMs.h"
+
+1730944221 c:\users\15599\desktop\csci 191t\lesson13\include\_kbms.h
+	<_Common.h>
+	<_Models.h>
+	<_parallax.h>
+	<_SkyBox.h>
+	<_Skybox2.h>
+	<_Camera.h>
+	<_2DPlayer.h>
+	<_ModelLoaderMD2.h>
+
+1730332935 c:\users\15599\desktop\csci 191t\lesson13\include\_models.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1727307515 c:\users\15599\desktop\csci 191t\lesson13\include\_parallax.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1727738306 c:\users\15599\desktop\csci 191t\lesson13\include\_skybox.h
+	<_Common.h>
+	<_TextureLoader.h>
+
+1727911438 c:\users\15599\desktop\csci 191t\lesson13\include\_skybox2.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1725927004 source:c:\users\15599\desktop\csci 191t\lesson13\src\_lightsetup.cpp
+	"_lightSetup.h"
+
+1725925282 c:\users\15599\desktop\csci 191t\lesson13\include\_lightsetup.h
+	<_Common.h>
+
+1730943954 source:c:\users\15599\desktop\csci 191t\lesson13\src\_modelloadermd2.cpp
+	"_ModelLoaderMD2.h"
+
+1730943915 c:\users\15599\desktop\csci 191t\lesson13\include\_modelloadermd2.h
+	<_Common.h>
+	<_TextureLoader.h>
+	"Anorms.h"
+
+1730769381 c:\users\15599\desktop\csci 191t\lesson13\include\anorms.h
+
+1730333189 source:c:\users\15599\desktop\csci 191t\lesson13\src\_models.cpp
+	"_Models.h"
+
+1727307675 source:c:\users\15599\desktop\csci 191t\lesson13\src\_parallax.cpp
+	"_parallax.h"
+
+1730944348 source:c:\users\15599\desktop\csci 191t\lesson13\src\_scene.cpp
+	"_Scene.h"
+	<_lightSetup.h>
+	<_Models.h>
+	<_KbMs.h>
+	<_parallax.h>
+	<_SkyBox.h>
+	<_Skybox2.h>
+	<_Camera.h>
+	<_2DPlayer.h>
+	<_Bullets.h>
+	<_Collision.h>
+	<_ModelLoaderMD2.h>
+
+1727741554 source:c:\users\15599\desktop\csci 191t\lesson13\src\_skybox.cpp
+	"_SkyBox.h"
+
+1728342234 source:c:\users\15599\desktop\csci 191t\lesson13\src\_skybox2.cpp
+	"_Skybox2.h"
+
+1726703316 source:c:\users\15599\desktop\csci 191t\lesson13\src\_textureloader.cpp
+	"_TextureLoader.h"
+
+1727307382 source:c:\users\15599\desktop\csci 191t\lesson13\src\_timer.cpp
+	"_Timer.h"
+
+1730941904 source:c:\users\15599\desktop\csci 191t\lesson13\src\t.cpp
+	"t.h"
+
+1730941904 c:\users\15599\desktop\csci 191t\lesson13\include\t.h
+
+1731970647 source:c:\users\maxjo\downloads\191t\lesson13\main.cpp
+	<windows.h>
+	<_Common.h>
+	<_Scene.h>
+
+1732035932 c:\users\maxjo\downloads\191t\lesson13\include\_common.h
+	<string.h>
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glext.h>
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+	<time.h>
+	<cmath>
+
+1731970648 c:\users\maxjo\downloads\191t\lesson13\include\_scene.h
+	<_Common.h>
+
+1731970649 source:c:\users\maxjo\downloads\191t\lesson13\src\_textureloader.cpp
+	"_TextureLoader.h"
+
+1731970648 c:\users\maxjo\downloads\191t\lesson13\include\_textureloader.h
+	<_Common.h>
+	<SOIL.h>
+
+1731970649 source:c:\users\maxjo\downloads\191t\lesson13\src\_timer.cpp
+	"_Timer.h"
+
+1731970648 c:\users\maxjo\downloads\191t\lesson13\include\_timer.h
+	<_Common.h>
+
+1731971624 c:\users\maxjo\downloads\191t\common\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1731966788 c:\users\maxjo\downloads\191t\common\soil.h
+
+1731970649 source:c:\users\maxjo\downloads\191t\lesson13\src\_2dplayer.cpp
+	"_2DPlayer.h"
+
+1731970648 c:\users\maxjo\downloads\191t\lesson13\include\_2dplayer.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1731970649 source:c:\users\maxjo\downloads\191t\lesson13\src\_bullets.cpp
+	"_Bullets.h"
+
+1731970648 c:\users\maxjo\downloads\191t\lesson13\include\_bullets.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1731970649 source:c:\users\maxjo\downloads\191t\lesson13\src\_camera.cpp
+	"_Camera.h"
+
+1731970648 c:\users\maxjo\downloads\191t\lesson13\include\_camera.h
+	<_Common.h>
+
+1731970649 source:c:\users\maxjo\downloads\191t\lesson13\src\_collision.cpp
+	"_Collision.h"
+
+1731970648 c:\users\maxjo\downloads\191t\lesson13\include\_collision.h
+	<_Common.h>
+
+1732148739 source:c:\users\maxjo\downloads\191t\lesson13\src\_kbms.cpp
+	"_KbMs.h"
+
+1731970648 c:\users\maxjo\downloads\191t\lesson13\include\_kbms.h
+	<_Common.h>
+	<_Models.h>
+	<_parallax.h>
+	<_SkyBox.h>
+	<_Skybox2.h>
+	<_Camera.h>
+	<_2DPlayer.h>
+	<_ModelLoaderMD2.h>
+
+1731970648 c:\users\maxjo\downloads\191t\lesson13\include\_models.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1731970648 c:\users\maxjo\downloads\191t\lesson13\include\_parallax.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1731970648 c:\users\maxjo\downloads\191t\lesson13\include\_skybox.h
+	<_Common.h>
+	<_TextureLoader.h>
+
+1731970648 c:\users\maxjo\downloads\191t\lesson13\include\_skybox2.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1732148843 c:\users\maxjo\downloads\191t\lesson13\include\_modelloadermd2.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<map>
+	<string>
+	<vector>
+	<fstream>
+	<sstream>
+
+1731970648 c:\users\maxjo\downloads\191t\lesson13\include\anorms.h
+
+1731970649 source:c:\users\maxjo\downloads\191t\lesson13\src\_lightsetup.cpp
+	"_lightSetup.h"
+
+1731970648 c:\users\maxjo\downloads\191t\lesson13\include\_lightsetup.h
+	<_Common.h>
+
+1732139226 source:c:\users\maxjo\downloads\191t\lesson13\src\_modelloadermd2.cpp
+	"_ModelLoaderMD2.h"
+	<cstring>
+	<cmath>
+
+1731970649 source:c:\users\maxjo\downloads\191t\lesson13\src\_models.cpp
+	"_Models.h"
+
+1731970649 source:c:\users\maxjo\downloads\191t\lesson13\src\_parallax.cpp
+	"_parallax.h"
+
+1732148363 source:c:\users\maxjo\downloads\191t\lesson13\src\_scene.cpp
+	"_Scene.h"
+	<_lightSetup.h>
+	<_Models.h>
+	<_KbMs.h>
+	<_parallax.h>
+	<_SkyBox.h>
+	<_Skybox2.h>
+	<_Camera.h>
+	<_2DPlayer.h>
+	<_Bullets.h>
+	<_Collision.h>
+	<_ModelLoaderMD2.h>
+	<_OBJLoader.h>
+	"EnemyManager.h"
+
+1731970649 source:c:\users\maxjo\downloads\191t\lesson13\src\_skybox.cpp
+	"_SkyBox.h"
+
+1731970649 source:c:\users\maxjo\downloads\191t\lesson13\src\_skybox2.cpp
+	"_Skybox2.h"
+
+1731966788 c:\users\maxjo\downloads\191t\common\include\soil.h
+
+1732037016 source:c:\users\maxjo\downloads\191t\lesson13\src\_objloader.cpp
+	"_OBJLoader.h"
+
+1732035699 c:\users\maxjo\downloads\191t\lesson13\include\_objloader.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<vector>
+	<string>
+	<fstream>
+	<sstream>
+
+1732148613 c:\users\maxjo\downloads\191t\lesson13\include\enemymanager.h
+	"_ModelLoaderMD2.h"
+	<vector>
+
+1732148770 source:c:\users\maxjo\downloads\191t\lesson13\src\enemymanager.cpp
+	"EnemyManager.h"
+

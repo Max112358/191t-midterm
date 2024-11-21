@@ -1,0 +1,49 @@
+classDiagram
+    class Game {
+        -score: int
+        -gameSpeed: float
+        -isGameOver: bool
+        +init()
+        +update()
+        +render()
+        +handleInput()
+        +checkCollisions()
+    }
+
+    class Player {
+        -position: vec2
+        -velocity: vec2
+        -isJumping: bool
+        +jump()
+        +update()
+        +render()
+        +checkGroundCollision()
+    }
+
+    class ObstacleManager {
+        -obstacles: vector~Obstacle~
+        -spawnTimer: Timer
+        +spawnObstacle()
+        +updateObstacles()
+        +renderObstacles()
+    }
+
+    class Obstacle {
+        -position: vec2
+        -size: vec2
+        -speed: float
+        +update()
+        +render()
+    }
+
+    class Background {
+        -layers: vector~ParallaxLayer~
+        -scrollSpeed: float
+        +scroll()
+        +render()
+    }
+
+    Game --> Player
+    Game --> ObstacleManager
+    Game --> Background
+    ObstacleManager --> Obstacle
