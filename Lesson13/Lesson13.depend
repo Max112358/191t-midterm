@@ -333,7 +333,7 @@
 	<time.h>
 	<cmath>
 
-1732211424 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_scene.h
+1732301053 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_scene.h
 	<_Common.h>
 
 1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_2dplayer.cpp
@@ -418,7 +418,7 @@
 1731970648 c:\users\maxjo\documents\github\191t-midterm\lesson13\include\_lightsetup.h
 	<_Common.h>
 
-1732158150 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_modelloadermd2.cpp
+1732301304 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_modelloadermd2.cpp
 	"_ModelLoaderMD2.h"
 	<cstring>
 	<iostream>
@@ -443,7 +443,7 @@
 1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_parallax.cpp
 	"_parallax.h"
 
-1732211430 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_scene.cpp
+1732301211 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_scene.cpp
 	"_Scene.h"
 	<_lightSetup.h>
 	<_Models.h>
@@ -477,7 +477,7 @@
 1731970649 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\_timer.cpp
 	"_Timer.h"
 
-1732232888 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\enemymanager.cpp
+1732295654 source:c:\users\maxjo\documents\github\191t-midterm\lesson13\src\enemymanager.cpp
 	"EnemyManager.h"
 
 1731971624 c:\users\maxjo\documents\github\191t-midterm\common\include\gl\glut.h

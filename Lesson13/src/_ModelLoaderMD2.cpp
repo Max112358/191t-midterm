@@ -131,7 +131,7 @@ int _ModelLoaderMD2::ReadMD2Model(const char* filename, struct md2_model_t* mdl)
         myTex->loadTexture("models/carrot/skin.jpg");
     }
     else if(strstr(filename, "MarvinMartian") != nullptr) {
-        myTex->loadTexture("models/MarvinMartian/marvin.jpg");
+        myTex->loadTexture("models/MarvinMartian/skin.jpg");
     }
     else {
         myTex->loadTexture(mdl->skins[0].name);

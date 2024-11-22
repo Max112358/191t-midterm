@@ -113,18 +113,20 @@ void EnemyManager::checkCollisions(const _ModelLoaderMD2* player, bool isPlayerJ
     while (it != enemies.end()) {
         float distance = getEdgeDistance(*it, player);
 
+        // If we hit an enemy while not jumping, reset score and remove enemy
+        if (distance <= 2.0f && !isPlayerJumping) {
+            score = 0;  // Reset score on collision
+            delete *it;
+            it = enemies.erase(it);
+            continue;
+        }
+
         // If distance is increasing and we're just past collision distance,
         // that means we successfully jumped over
         if (distance > 2.0f && distance < 3.0f && isPlayerJumping) {
-            score += 10;  // Increase score in Scene
+            score += 10;  // Increase score for successful jump
         }
 
-        // Handle regular collision
-        if (distance <= 2.0f && !isPlayerJumping) {
-            delete *it;
-            it = enemies.erase(it);
-        } else {
-            ++it;
-        }
+        ++it;
     }
 }

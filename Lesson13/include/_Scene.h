@@ -13,6 +13,7 @@ class _Scene
         GLint drawScene(); //Render scene
         GLvoid resizeScene(GLsizei, GLsizei); // address window resize
         GLvoid mouseMapping(int,int);
+        void advanceLevel();
 
         int winMsg(HWND, UINT, WPARAM, LPARAM);
         WPARAM wParam;

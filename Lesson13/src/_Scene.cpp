@@ -30,6 +30,12 @@ _Bullets b[20];
 _Collision *hit = new _Collision();
 _ModelLoaderMD2 *mdl3D = new _ModelLoaderMD2();
 EnemyManager* enemies = new EnemyManager();
+_parallax *forest = new _parallax();
+_parallax *mountain = new _parallax();
+_parallax *desert = new _parallax();
+_parallax *forest_path = new _parallax();
+_parallax *mountain_path = new _parallax();
+_parallax *desert_path = new _parallax();
 
 
 
@@ -43,8 +49,8 @@ const float INITIAL_Y = 4.0f;    // Starting Y position (ground level)
 const float INITIAL_Z = -100.0f; // Starting Z position (distance from camera)
 
 //other vars
-int gameScore = 0;  // Add this with your other member variables
-
+int gameScore = 0;
+int current_level = 1;
 
 _Scene::_Scene()
 {
@@ -95,8 +101,15 @@ GLint _Scene::initGL()
     //sky->skyBoxInit();
     sky2->skyBoxinit("images/bk.png");
 
+    forest->parallaxInit("images/forest_para.jpg");
+    mountain->parallaxInit("images/mountain_para.jpg");
+    desert->parallaxInit("images/desert_para.jpg");
 
-    mdl3D->initModel("models/Tekk/tris.md2"); //this is the main character
+    forest_path->parallaxInit("images/forest_para_walkway.jpg");
+    mountain_path->parallaxInit("images/mountain_para_walkway.jpg");
+    desert_path->parallaxInit("images/desert_para_walkway.jpg");
+
+    mdl3D->initModel("models/MarvinMartian/tris.md2"); //this is the main character
     mdl3D->setAnimationState(_ModelLoaderMD2::ANIM_RUN); // Start with running
     mdl3D->dirAngleZ = 0; // Face right
 
@@ -135,6 +148,8 @@ GLint _Scene::drawScene()
     myLight->movingLight(GL_LIGHT0);
     glPopMatrix();
 
+
+     /*
     //this part controls the parallax background
     glPushMatrix();
     glTranslatef(0,-10,1);
@@ -143,10 +158,73 @@ GLint _Scene::drawScene()
     plx->parallaxScroll(true, "right", 0.005);
     plx->parallaxDraw(screenWidth,screenHeight);
     glPopMatrix();
+    //*/
 
+    //this part controls the parallax background
+    if(current_level == 1){
+
+        //floor
+        glPushMatrix();
+        glTranslatef(0,-10,1);
+        glRotatef(90,1,0,0);
+        glScalef(100,50,1.0);
+        forest_path->parallaxScroll(true, "right", 0.005);
+        forest_path->parallaxDraw(screenWidth,screenHeight);
+        glPopMatrix();
+
+        //side
+        glPushMatrix();
+        glTranslatef(0,10,-20);
+        glScalef(30,20,1.0);
+        forest->parallaxScroll(true, "right", 0.005);
+        forest->parallaxDraw(screenWidth,screenHeight);
+        glPopMatrix();
+
+    }else if(current_level == 2)
+    {
+        //floor
+        glPushMatrix();
+        glTranslatef(0,-10,1);
+        glRotatef(90,1,0,0);
+        glScalef(100,50,1.0);
+        desert_path->parallaxScroll(true, "right", 0.005);
+        desert_path->parallaxDraw(screenWidth,screenHeight);
+        glPopMatrix();
+
+        //side
+        glPushMatrix();
+        glTranslatef(0,10,-20);
+        glScalef(30,20,1.0);
+        desert->parallaxScroll(true, "right", 0.005);
+        desert->parallaxDraw(screenWidth,screenHeight);
+        glPopMatrix();
+    }else
+    {
+        //floor
+        glPushMatrix();
+        glTranslatef(0,-10,1);
+        glRotatef(90,1,0,0);
+        glScalef(100,50,1.0);
+        mountain_path->parallaxScroll(true, "right", 0.005);
+        mountain_path->parallaxDraw(screenWidth,screenHeight);
+        glPopMatrix();
+
+        //side
+        glPushMatrix();
+        glTranslatef(0,10,-20);
+        glScalef(30,20,1.0);
+        mountain->parallaxScroll(true, "right", 0.005);
+        mountain->parallaxDraw(screenWidth,screenHeight);
+        glPopMatrix();
+    }
+
+
+
+    /*
     glPushMatrix();
     sky2->skyBoxDraw();
     glPopMatrix();
+    */
 
     float deltaTime = 1.0f/60.0f;
 
@@ -179,6 +257,7 @@ GLint _Scene::drawScene()
     glPushMatrix();
     enemies->updateEnemies();
     enemies->checkCollisions(mdl3D, isJumping, gameScore);  // Now passing all 3 required arguments
+    advanceLevel();
     enemies->drawEnemies();
     glPopMatrix();
 
@@ -250,4 +329,14 @@ GLvoid _Scene::mouseMapping(int x, int y)
 
      gluUnProject(winX,winY,winZ,modelViewM,projectionM,viewPort,&mouseX,&mouseY,&mouseZ);
 
+}
+
+void _Scene::advanceLevel() {
+    if (gameScore >= 60) {
+        gameScore = 0;
+        current_level++;
+        if (current_level > 3) {
+            current_level = 1;  // Loop back to first level
+        }
+    }
 }
