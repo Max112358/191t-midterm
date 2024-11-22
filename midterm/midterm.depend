@@ -501,3 +501,171 @@
 	<_Common.h>
 	<string>
 
+1731970647 source:c:\users\maxjo\documents\github\191t-midterm\midterm\main.cpp
+	<windows.h>
+	<_Common.h>
+	<_Scene.h>
+
+1732035932 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_common.h
+	<string.h>
+	<GL/glut.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glext.h>
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+	<time.h>
+	<cmath>
+
+1732301053 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_scene.h
+	<_Common.h>
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_2dplayer.cpp
+	"_2DPlayer.h"
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_2dplayer.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_textureloader.h
+	<_Common.h>
+	<SOIL.h>
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_timer.h
+	<_Common.h>
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_bullets.cpp
+	"_Bullets.h"
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_bullets.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_camera.cpp
+	"_Camera.h"
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_camera.h
+	<_Common.h>
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_collision.cpp
+	"_Collision.h"
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_collision.h
+	<_Common.h>
+
+1732148739 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_kbms.cpp
+	"_KbMs.h"
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_kbms.h
+	<_Common.h>
+	<_Models.h>
+	<_parallax.h>
+	<_SkyBox.h>
+	<_Skybox2.h>
+	<_Camera.h>
+	<_2DPlayer.h>
+	<_ModelLoaderMD2.h>
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_models.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_parallax.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_skybox.h
+	<_Common.h>
+	<_TextureLoader.h>
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_skybox2.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<_Timer.h>
+
+1732158336 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_modelloadermd2.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<map>
+	<string>
+	<vector>
+	<fstream>
+	<sstream>
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_lightsetup.cpp
+	"_lightSetup.h"
+
+1731970648 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_lightsetup.h
+	<_Common.h>
+
+1732301304 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_modelloadermd2.cpp
+	"_ModelLoaderMD2.h"
+	<cstring>
+	<iostream>
+	"Anorms.h"
+
+1732149122 c:\users\maxjo\documents\github\191t-midterm\midterm\include\anorms.h
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_models.cpp
+	"_Models.h"
+
+1732037016 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_objloader.cpp
+	"_OBJLoader.h"
+
+1732035699 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_objloader.h
+	<_Common.h>
+	<_TextureLoader.h>
+	<vector>
+	<string>
+	<fstream>
+	<sstream>
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_parallax.cpp
+	"_parallax.h"
+
+1732301211 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_scene.cpp
+	"_Scene.h"
+	<_lightSetup.h>
+	<_Models.h>
+	<_KbMs.h>
+	<_parallax.h>
+	<_SkyBox.h>
+	<_Skybox2.h>
+	<_Camera.h>
+	<_2DPlayer.h>
+	<_Bullets.h>
+	<_Collision.h>
+	<_ModelLoaderMD2.h>
+	<_OBJLoader.h>
+	"EnemyManager.h"
+	<_TextRenderer.h>
+
+1732232878 c:\users\maxjo\documents\github\191t-midterm\midterm\include\enemymanager.h
+	"_ModelLoaderMD2.h"
+	"_Timer.h"
+	<vector>
+
+1732211519 c:\users\maxjo\documents\github\191t-midterm\midterm\include\_textrenderer.h
+	<_Common.h>
+	<string>
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_skybox.cpp
+	"_SkyBox.h"
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_skybox2.cpp
+	"_Skybox2.h"
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_textureloader.cpp
+	"_TextureLoader.h"
+
+1731970649 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\_timer.cpp
+	"_Timer.h"
+
+1732295654 source:c:\users\maxjo\documents\github\191t-midterm\midterm\src\enemymanager.cpp
+	"EnemyManager.h"
+
